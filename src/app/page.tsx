@@ -49,9 +49,9 @@ export default function Home() {
   return (
     <>
       <Background />
-      <main className="min-h-screen p-8 relative">
-        <div className="max-w-md mx-auto bg-white/90 backdrop-blur-sm p-6 rounded-lg shadow-xl">
-          <h1 className="text-3xl font-bold mb-8 text-center text-gray-800">Fitness Tracker</h1>
+      <main className="min-h-screen p-4 sm:p-8 flex flex-col items-center justify-center">
+        <div className="w-full max-w-md mx-auto bg-white/90 backdrop-blur-sm p-6 rounded-lg shadow-xl">
+          <h1 className="text-2xl sm:text-3xl font-bold mb-6 text-center text-gray-800">Fitness Tracker</h1>
           
           <form onSubmit={handleSubmit} className="space-y-4">
             <div>
@@ -87,10 +87,10 @@ export default function Home() {
             <button
               type="submit"
               disabled={loading}
-              className={`w-full py-2 px-4 rounded-md text-white transition-colors ${
+              className={`w-full py-3 px-4 rounded-md text-white font-medium transition-colors ${
                 loading 
                   ? 'bg-purple-400 cursor-not-allowed' 
-                  : 'bg-purple-500 hover:bg-purple-600'
+                  : 'bg-purple-600 hover:bg-purple-700 active:bg-purple-800'
               }`}
             >
               {loading ? 'Calculating...' : 'Calculate Calories'}
@@ -104,7 +104,7 @@ export default function Home() {
           )}
 
           {calories !== null && !error && (
-            <div className="mt-8 space-y-4">
+            <div className="mt-6 space-y-4">
               <div className="p-4 bg-green-100/90 backdrop-blur-sm rounded-md">
                 <p className="text-center text-lg text-green-800">
                   You burned approximately <span className="font-bold">{calories}</span> calories!

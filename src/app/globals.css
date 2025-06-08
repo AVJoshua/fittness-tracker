@@ -6,6 +6,12 @@
   .bg-gradient {
     background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
     background-size: 400% 400%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
   }
   
   .animate-gradient {
@@ -36,6 +42,7 @@
   width: var(--size);
   height: var(--size);
   bottom: -100px;
+  pointer-events: none;
 }
 
 .bubble-0 {
