@@ -1,0 +1,69 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .bg-gradient {
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+  }
+  
+  .animate-gradient {
+    animation: gradient 15s ease infinite;
+  }
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Bubble styles and animations */
+.bubble {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(1px);
+  animation: float calc(20s + var(--delay)) linear infinite;
+  left: var(--left);
+  width: var(--size);
+  height: var(--size);
+  bottom: -100px;
+}
+
+.bubble-0 {
+  animation-duration: 15s;
+}
+
+.bubble-1 {
+  animation-duration: 18s;
+}
+
+.bubble-2 {
+  animation-duration: 20s;
+}
+
+.bubble-3 {
+  animation-duration: 22s;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(100vh) scale(1);
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(-100vh) scale(1.5);
+    opacity: 0;
+  }
+} 
